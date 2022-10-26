@@ -1,0 +1,203 @@
+*{
+    box-sizing:border-box;
+  }
+  
+  
+  body {
+    margin: auto;
+    padding: auto;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(2, 15, 27);
+    text-align: center;
+    width: 50%;
+    
+  }
+  h1{
+    color: #8fdbeefb;
+  }
+  
+  .container {
+    background-color: #08b9e6fb;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    position: absolute;
+    top: 10%;
+    bottom: 40%;
+    left: 17%;
+    right: 70%;
+    padding: 15px;
+    margin: 10px;
+    box-sizing: border-box;
+   color:#db1c1c;
+    
+  }
+  
+  img.background {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: blur(5px); 
+    filter: blur(5px);
+}
+
+  @media screen and (min-width:600px) {
+    .container{
+      width:70%;
+      color:aqua;
+      background-color:rgb(231, 18, 28)
+    }
+  }
+  @media screen and (max-width:500px) {
+    .container{
+      width:70%;
+      color:white;
+      background-color:rgb(4, 4, 34);
+      font-size: 30%;
+    }
+  }
+  
+  .row{
+    display:flex;
+    flex-wrap: wrap;
+  }
+  
+  .leftbox{
+    flex:50%;
+  }
+  
+  .rightbox{
+    flex:50%;
+  }
+  
+  @media screen and (max-width:600px){
+    .row{
+      flex-direction: column;
+    }
+    
+  }
+  
+  @media  screen and (max-width:600px){
+    .rightbox{
+      flex-direction: column;
+    }
+  }
+  table {
+    position: absolute;
+    top: 45%;
+    bottom: 20%;
+    left: 60%;
+    width: 35%;
+    height: 70%;
+    padding: 5px;
+    margin: 60px;
+    transform: translate(-50%, -50%);
+    background: white;
+    box-sizing: border-box;
+    color: aqua;
+    border-radius: 10px;
+  }
+  .bottom1{
+    width:80%;
+    height: 40px;
+    border-style: hidden;
+    border-radius: 5px;
+    background-color: rgba(22, 25, 177, 0.699);
+    color: #ffff;
+
+  }
+  
+  
+  
+  
+  .note {
+    text-align: left;
+    color: white;
+    margin: 80px;
+    font-size: 25px;
+  }
+  
+  .h1 {
+    font-size: 70%;
+  }
+  
+  
+  
+  input {
+    width: 80%;
+    height: 50%;
+    padding: 5px ;
+    margin: 5px ;
+    box-sizing: border-box;
+  }
+  
+  
+  .press {
+    background-color: rgba(24, 216, 24, 0.562);
+    border-style: hidden;
+    color: white;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+  }
+  
+  .top1 {
+    background-color: rgba(22, 25, 177, 0.699);
+    border-style: hidden;
+    color: white;
+    width: 35%;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 42.5%;
+    display: inline-block;
+    padding: 5px;
+    margin: 60px;
+  }
+  
+  .hint {
+    font-size: 45%;
+    color: black;
+    border-style: hidden;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .hint strong {
+    color: red;
+  }
+  
+  main {
+    width: 50%;
+  }
+  
+  .field:focus:required:invalid {
+    outline: rgb(231, 18, 28) 2px;
+  }
+  
+  .first-name-field:focus:invalid + .message::after {
+    color: rgb(231, 18, 28);
+    content: "first name cannot be empty";
+  }
+  
+  .last-name-field:focus:invalid + .message::after {
+    color: rgb(231, 18, 28);
+    content: "Last name cannot be empty";
+  }
+  
+  .email-field:focus:invalid + .message::after {
+    color: rgb(231, 18, 28);
+    content: "looks like this is not an email";
+  }
+  
+  .pwd-name-field:focus:invalid + .message::after {
+    color: rgb(231, 18, 28);
+    content: "password cannot be empty";
+  }
