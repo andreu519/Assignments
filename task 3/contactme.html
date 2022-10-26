@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="contactme.css" />
+  <script src="https://kit.fontawesome.com/cfe4f2001a.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <main>
+    <header id="header">
+        <div class="container">
+            <nav>
+              <img src="images/logo.png" class="logo" />
+              <ul id="sidemenu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+              </ul>
+               </nav>
+             </div>
+
+    </header>
+    <section id="contact">
+        <div class="container">
+          <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-envelope-dot"></i>drewnyan995@gmail.com</p>
+           
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required>
+              <input type="email" name="Email" placeholder="Your Email" required>
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit"  class="form btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+     </div>
+    </section>
+    
+
+    <footer>
+        <div class="social-icons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href="twitter.com/andreu10J"><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            <a href="github.com/andreu519"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/andrew-kweku-nyan-a13725239"><i class="fa-brands fa-linkedin"></i></a>
+            
+            <a href="images/Andrew Nyan CV.docx" download class="btn btn2">Download CV</a>
+          </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © Andreu</p>
+
+          </div>
+
+    </footer>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzFv9a9M5cELOs8MuRC66Q_kvSrwe_EzGYlehT8CE7z_pmLS9D2PNMGiR7XWvClvQPp/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+              msg.innerHTML = "Message Sent Successfully"
+              setTimeout(function(){
+                msg.innerHTML = ""
+              },5000)
+              form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+      </main>
+</body>
+</html>
